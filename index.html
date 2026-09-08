@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Google Sheet Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><h1>Google Sheet Manager</h1><p>Search, view and update your worksheet</p></div>
+    <button id="refreshBtn">Refresh</button>
+  </header>
+  <main>
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Search all columns…">
+      <select id="columnFilter"><option value="">All columns</option></select>
+      <button id="addBtn" class="primary">Add record</button>
+    </section>
+    <div id="status" class="status">Loading…</div>
+    <section class="table-wrap"><table id="dataTable"><thead></thead><tbody></tbody></table></section>
+    <div id="empty" class="empty" hidden>No records found.</div>
+  </main>
+  <dialog id="editor">
+    <form method="dialog" id="editForm">
+      <div class="dialog-head"><h2 id="dialogTitle">Record</h2><button type="button" id="closeBtn">×</button></div>
+      <div id="fields" class="fields"></div>
+      <div class="actions"><button type="button" id="cancelBtn">Cancel</button><button type="submit" class="primary">Save</button></div>
+    </form>
+  </dialog>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
